@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 
 //input
 rl.on('line', (input) => {});
-
+ 
 // output
 rl.on('close', () => {
     process.exit();
