@@ -1,9 +1,9 @@
-const path = process.platform === 'linux' ? '/dev/stdin' : 'input.txt'
+const path = process.platform === 'linux' ? '/dev/stdin' : 'input.txt';
 const input = require('fs').readFileSync(path).toString().trim().split('\n');
 
 const [M, N, H] = input.shift().split(' ').map(Number);
 let graph = [];
-let q = []; 
+let q = [];
 
 for (let i = 0; i < H; i++) {
     let layer = [];
@@ -37,7 +37,7 @@ while (q.length) {
             continue;
         }
 
-        if (graph[nx][ny][nz] === 0 && visited[nx][ny][nz] === 0) {
+        if (graph[nx][ny][nz] === 0) {
             q.push([nx, ny, nz]);
             graph[nx][ny][nz] = graph[x][y][z] + 1;
         }
@@ -59,4 +59,4 @@ for (let a = 0; a < H; a++) {
     }
 }
 
-console.log(answer-1);
+console.log(answer - 1);
